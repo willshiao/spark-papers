@@ -63,7 +63,7 @@ typings/
 # ignore uploads
 uploads/*
 
-# ignore other config files
+# ignore other config and assorted files
 !config/default.js
 config/*
 .DS_Store
@@ -73,4 +73,5 @@ config.cnf
 s2-corpus-13
 s2-corpus-13.gz
 picklejar
-.pdf
+*.pdf
+config.cnf

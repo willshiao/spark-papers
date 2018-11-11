@@ -2,6 +2,7 @@ import numpy as np
 import pymongo
 import configparser as cfg
 from scipy.sparse.linalg import svds, eigs
+<<<<<<< HEAD
 from scipy import stats
 from scipy.sparse import random
 from pymongo import MongoClient
@@ -18,6 +19,9 @@ def pickle_matrix(matrix, filename):
 def depickle_matrix(filename):
     fileObj = open(filename, 'rb')
     return pickle.load(fileObj)
+=======
+from pymongo import MongoClient
+>>>>>>> 978f44ac56fe2d0a4b7efae87be210071e863c28
 
 
 def connect():
