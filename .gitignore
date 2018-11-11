@@ -67,3 +67,5 @@ uploads/*
 !config/default.js
 config/*
 .DS_Store
+__pycache__
+/.vscode/

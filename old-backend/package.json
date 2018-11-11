@@ -27,6 +27,7 @@
     "body-parser": "^1.18.3",
     "config": "^2.0.1",
     "express": "^4.16.4",
+    "node-summary": "^1.2.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "textract": "^2.4.0",

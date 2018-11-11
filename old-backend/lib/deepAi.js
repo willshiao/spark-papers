@@ -18,6 +18,7 @@ class DeepAi {
   }
 
   summarize (text) {
+    console.log(text)
     console.log('Tis: ', this)
     return rp({
       url: 'https://api.deepai.org/api/summarization',
