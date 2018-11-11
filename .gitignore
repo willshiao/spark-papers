@@ -69,3 +69,4 @@ config/*
 .DS_Store
 __pycache__
 /.vscode/
+config.cnf
