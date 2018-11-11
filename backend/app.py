@@ -1,6 +1,5 @@
 from flask import Flask
 from flask import request
-
 from magic import svd, sync_data
 app = Flask(__name__)
 

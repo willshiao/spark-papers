@@ -1,6 +1,8 @@
 import numpy as np
 import pymongo
 import configparser as cfg
+import signal
+import sys
 from scipy.sparse.linalg import svds, eigs
 from pymongo import MongoClient
 
@@ -20,3 +22,9 @@ def svd():
 def sync_data():
     # put user data in matrix
     client = connect()
+
+
+def signal_handler(sig, frame):
+    print('pickle here')
+    sys.exit(0)
+signal.signal(signal.SIGINT, signal_handler)
