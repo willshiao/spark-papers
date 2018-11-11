@@ -9,8 +9,8 @@ export default class Home extends Component {
     return (
       <div className="home-container">
         <div className="container-fluid">
-          <div class="row justify-content-center">
-            <div class="col-md-12">
+          <div className="row justify-content-center">
+            <div className="col-md-12">
               <div className="logo-container">
                 <img src={ logo } alt="SparkPapers logo" id="sparkpapers-logo"/>
               </div>
@@ -18,7 +18,7 @@ export default class Home extends Component {
           </div>
           <div className="row justify-content-center">
             <div className="col-md-12">
-              <div class="button-container">
+              <div className="button-container">
                 <NavLink to="/choose">
                   <button type="button" id="get-started" className="btn btn-primary">Get Started</button>
                 </NavLink>
