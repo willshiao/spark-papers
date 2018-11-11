@@ -4,11 +4,11 @@ import configparser as cfg
 import signal
 import sys
 from scipy.sparse.linalg import svds, eigs
-<<<<<<< HEAD
 from scipy import stats
 from scipy.sparse import random
 from pymongo import MongoClient
 import pickle
+
 
 def pickle_matrix(matrix, filename):
     # filename = input("Pickle jar name: ") # the place the pickled data is saved
@@ -21,9 +21,6 @@ def pickle_matrix(matrix, filename):
 def depickle_matrix(filename):
     fileObj = open(filename, 'rb')
     return pickle.load(fileObj)
-=======
-from pymongo import MongoClient
->>>>>>> 978f44ac56fe2d0a4b7efae87be210071e863c28
 
 
 def connect():
