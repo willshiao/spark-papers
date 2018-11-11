@@ -59,3 +59,11 @@ typings/
 
 # next.js build output
 .next
+
+# ignore uploads
+uploads/*
+
+# ignore other config files
+!config/default.js
+config/*
+.DS_Store

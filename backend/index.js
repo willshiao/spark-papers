@@ -7,9 +7,11 @@ const { ErrorHandler } = require('./lib/errorHandlers')
 
 require('./lib/extendExpress').extendResponse(express.response)
 const indexRoute = require('./routes/index')
+const papersRoute = require('./routes/papers')
 
 const app = express()
 app.use(indexRoute)
+app.use('/papers', papersRoute)
 // Uncomment this out if you want to have a directory for static assets
 // app.use(express.static('public'))
 app.use(ErrorHandler)

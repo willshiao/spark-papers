@@ -6,6 +6,11 @@ module.exports = {
   site: {
     port: 3000  // Default port number, can be overriden with the PORT env variable
   },
+  api: {
+    deepAi: {
+      keys: [] // Put DeepAI API keys here
+    }
+  },
   logger: {  // Settings for the logger, passed to winston
     settings: {
       level: 'debug',
