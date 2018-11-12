@@ -38,20 +38,12 @@
   margin-top: 30%;
 }
 
-.fade-enter {
-  opacity: 0.01;
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.fade-leave {
-  opacity: 1;
-}
-
-.fade-leave.fade-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+.results-button-container {
+  text-align: center;
+  margin-top: 20%;
 }

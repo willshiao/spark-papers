@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Choose from './components/Choose';
 import ChooseTwo from './components/ChooseTwo';
-import Result from './components/Result';
+import List from './components/List';
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
             <Route exact path="/" component={ Home }/>
             <Route path="/choose" component={ Choose }/>
             <Route path="/choose-two" component={ ChooseTwo }/>
-            <Route path="/result" component={ Result }/>
+            <Route path="/list" component={ List }/>
           </Switch>
         </BrowserRouter>
       </div>

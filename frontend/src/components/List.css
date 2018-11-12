@@ -1,0 +1,38 @@
+.liked-container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 5%;
+}
+
+.liked-paper {
+  margin-bottom: 10%;
+}
+
+.liked-paper-info {
+  font-family: VisbyRoundCF;
+  color: #ba745e;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.liked-paper-name {
+  font-family: VisbyRoundCF;
+  color: #ba745e;
+  font-weight: normal;
+  font-size: 175%;
+  margin-bottom: 0;
+}
+
+#my-liked-papers {
+  text-align: center;
+  font-family: VisbyRoundCF;
+  color: white;
+  font-size: 150%;
+  margin-top: 10%;
+}
+
+.back-button-container {
+  text-align: center;
+  margin-bottom: 5%;
+}

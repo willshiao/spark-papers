@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import './ChooseTwo.css';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setPapers } from '../actions/setPapers';
 import { setUserID } from '../actions/setUserID';
 import { removePaper } from '../actions/removePaper';
 import { addPaper } from '../actions/addPaper';
+import { addLikedPaper } from '../actions/addLikedPaper';
 import Card from './Card';
 import axios from 'axios';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import '../style.css';
-
-const data = [
-  {name: "Research 1", author: "George", abstract: "This is a sample abstract for Research 1", url: "fake url 1"},
-  {name: "Research 2", author: "Thomas", abstract: "This is a sample abstract for Research 2", url: "fake url 2"}
-]
 
 class ChooseTwo extends Component {
 
@@ -22,22 +18,28 @@ class ChooseTwo extends Component {
     this.props.setUserID(userID);
 
     let fakeData = [
-      {id: 1, name: "Research 1", author: "George", abstract: "This is a sample abstract for Research 1", url: "fake url 1"},
-      {id: 2, name: "Research 2", author: "Thomas", abstract: "This is a sample abstract for Research 2", url: "fake url 2"}
+      {id: 1, name: "Research 1", author: "George", abstract: "This is a sample abstract for Research 1", url: "fake url 1", conference: "conference 1"},
+      {id: 2, name: "Research 2", author: "Thomas", abstract: "This is a sample abstract for Research 2", url: "fake url 2", conference: "conference 2"}
     ]
-      
-    // axios.get("/papers?count=2").then(res => {
-    //   console.log(res);
-    //   // use setPapers dispatch to set papers in store
-    //   // use setUserID dispatch to set userID in store
-    // })
-      
-    this.props.setPapers(fakeData);
+
+    axios.get('/users/get').then(res => {
+      this.props.setUserID(res.id)
+      return axios.get(`/papers?id=${this.props.userID}`)
+    })
+      .then(res => {
+        console.log(res)
+        this.props.setPapers(res)
+        return axios.get(`/papers?id=${this.props.userID}`)
+      })
+      .then(res => {
+        console.log(res);
+        this.props.addPaper(res);
+      }).catch(err => {
+        console.log(err);
+      })
   }
 
   clickOne = () => {
-    this.refs.researchpaper.style.animation = "fadeout 2s";
-
     let dislikedPaper = this.props.papers[0];
     let id = dislikedPaper.id;
 
@@ -66,16 +68,18 @@ class ChooseTwo extends Component {
   clickTwo = () => {
     let likedPaper = this.props.papers[0];
     let id = likedPaper.id;
+
+    this.props.addLikedPaper(likedPaper);
     
-    axios.post("url", {
-      userId: this.props.userID,
-      reportId: id,
-      score: 2
-    }).then(res => {
-      console.log(res);
-    }).catch(err => {
-      console.log(err);
-    })
+    // axios.post("url", {
+    //   userId: this.props.userID,
+    //   reportId: id,
+    //   score: 2
+    // }).then(res => {
+    //   console.log(res);
+    // }).catch(err => {
+    //   console.log(err);
+    // })
 
     this.props.removePaper();
 
@@ -89,16 +93,18 @@ class ChooseTwo extends Component {
   clickThree = () => {
     let superLikedPaper = this.props.papers[0];
     let id = superLikedPaper.id;
+
+    this.props.addLikedPaper(superLikedPaper);
     
-    axios.post("url", {
-      userId: this.props.userID,
-      reportId: id,
-      score: 3
-    }).then(res => {
-      console.log(res);
-    }).catch(err => {
-      console.log(err);
-    })
+    // axios.post("url", {
+    //   userId: this.props.userID,
+    //   reportId: id,
+    //   score: 3
+    // }).then(res => {
+    //   console.log(res);
+    // }).catch(err => {
+    //   console.log(err);
+    // })
 
     this.props.removePaper();
 
@@ -146,6 +152,15 @@ class ChooseTwo extends Component {
                   </div>
                 </div>
               </div>
+              <div className="row justify-content-center">
+                <div className="col-md-6">
+                  <div class="results-button-container">
+                    <NavLink to="/list">
+                      <button type="button" id="get-started" className="btn btn-primary">See My Results</button>
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -166,7 +181,8 @@ const mapDispatchToProps = dispatch => {
     setPapers: papers => { dispatch(setPapers(papers)) },
     setUserID: id => { dispatch(setUserID(id)) },
     removePaper: () => { dispatch(removePaper()) },
-    addPaper: paper => { dispatch(addPaper(paper)) }
+    addPaper: paper => { dispatch(addPaper(paper)) },
+    addLikedPaper: likedPaper => { dispatch(addLikedPaper(likedPaper)) }
   }
 }
 

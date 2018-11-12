@@ -8,9 +8,10 @@ export default class Card extends Component {
         <div className="container-fluid">
           <div className="paper-card">
             { this.props.paper.name && <h2 className="paper-title">{ this.props.paper.name }</h2> }
-            { this.props.paper.author && <p className="paper-info">Author(s): { this.props.paper.author }</p> }
-            { this.props.paper.abstract && <p className="paper-info">{ this.props.paper.abstract }</p> }
-            { this.props.paper.url && <p className="paper-info">{ this.props.paper.url }</p> }
+            { this.props.paper.authors && <p className="paper-info"><span class="bold-me">Author(s): </span>{ this.props.paper.authors.join(", ") }</p> }
+            { this.props.paper.abstract && <p className="paper-info"><span className="bold-me">Abstract: </span>{ this.props.paper.abstract }</p> }
+            { this.props.paper.conference && <p className="paper-info"><span className="bold-me">Conference: </span>{ this.props.paper.conference }</p> }
+            { this.props.paper.url && <p className="paper-info"><span className="bold-me">URL: </span>{ this.props.paper.url }</p> }
           </div>
         </div>
       </div>

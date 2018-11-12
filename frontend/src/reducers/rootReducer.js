@@ -1,5 +1,6 @@
 const initState = {
   papers: [],
+  likedPapers: [],
   userID: undefined
 };
 
@@ -29,6 +30,12 @@ const rootReducer = (state = initState, action) => {
     return {
       ...state,
       papers: [...state.papers, action.paper]
+    }
+  }
+  else if (action.type === "ADD_LIKED_PAPER") {
+    return {
+      ...state,
+      likedPapers: [...state.likedPapers, action.likedPaper]
     }
   }
   return state;

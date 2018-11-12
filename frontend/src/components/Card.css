@@ -4,6 +4,7 @@
   height: 80vh;
   margin-top: 10%;
   margin-left: 10%;
+  animation: fadein 1s;
 }
 
 .paper-title {
@@ -11,6 +12,7 @@
   color: #ba745e;
   text-align: center;
   padding-top: 5%;
+  animation: fadein 1s;
 }
 
 .paper-info {
@@ -18,6 +20,7 @@
   color: #ba745e;
   font-weight: bold;
   margin-left: 5%;
+  animation: fadein 1s;
 }
 
 .card-container {
@@ -32,4 +35,8 @@
 @keyframes fadeout {
   from { opacity: 1; }
   to   { opacity: 0; }
+}
+
+.bold-me {
+  font-weight: normal;
 }
