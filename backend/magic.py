@@ -45,6 +45,14 @@ def sync_data():
     client = connect()
 
 
+def reassemble():
+    client = connect()
+    result = numpy.zeros(num_users, num_papers)
+    for i in users:
+        for j in i:
+            result[i.id, j[0]] = j[1]
+
+
 def signal_handler(sig, frame):
     pickle_matrix(matrix, 'pickle')
     sys.exit(0)
