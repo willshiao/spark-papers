@@ -7,6 +7,7 @@ import { removePaper } from '../actions/removePaper';
 import { addPaper } from '../actions/addPaper';
 import Card from './Card';
 import axios from 'axios';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import '../style.css';
 
 const data = [
@@ -35,6 +36,8 @@ class ChooseTwo extends Component {
   }
 
   clickOne = () => {
+    this.refs.researchpaper.style.animation = "fadeout 2s";
+
     let dislikedPaper = this.props.papers[0];
     let id = dislikedPaper.id;
 
@@ -116,13 +119,13 @@ class ChooseTwo extends Component {
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-md-5">
-              { this.props.papers[0] && <Card paper={ this.props.papers[0] } /> }
+              { this.props.papers[0] && <Card ref="researchpaper" paper={ this.props.papers[0] }/> }
             </div>
             <div class="col-md-7">
               <div className="row justify-content-center">
                 <div className="col-md-10">
                   <p class="choose-rating">
-                    Select a rating below (1 - low, 3 - high) and we'll try our best to tune your likings.
+                    Select a rating below (1 = low, 3 = high) and we'll try our best to tune your likings.
                   </p>
                 </div>
               </div>
