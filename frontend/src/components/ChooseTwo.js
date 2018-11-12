@@ -18,14 +18,15 @@ class ChooseTwo extends Component {
     this.props.setUserID(userID);
 
     let fakeData = [
-      {id: 1, name: "Research 1", author: "George", abstract: "This is a sample abstract for Research 1", url: "fake url 1", conference: "conference 1"},
+      {id: 1, name: "Research 1", authors: "George", abstract: "This is a sample abstract for Research 1", url: "fake url 1", conference: "conference 1"},
       {id: 2, name: "Research 2", author: "Thomas", abstract: "This is a sample abstract for Research 2", url: "fake url 2", conference: "conference 2"}
     ]
 
     axios.get('/users/get').then(res => {
+      console.log(res)
       this.props.setUserID(res.id)
       return axios.get(`/papers?id=${this.props.userID}`)
-    })
+      })
       .then(res => {
         console.log(res)
         this.props.setPapers(res)
@@ -43,7 +44,7 @@ class ChooseTwo extends Component {
     let dislikedPaper = this.props.papers[0];
     let id = dislikedPaper.id;
 
-    axios.post("url", {
+    axios.post("/papers", {
       userId: this.props.userID,
       reportId: id,
       score: 1
@@ -55,14 +56,11 @@ class ChooseTwo extends Component {
 
     this.props.removePaper();
 
-    // axios.get("url")
-    //   .then(res => {
-    //     let newPaper = res.JSON();
-    //     this.props.addPaper(newPaper);
-    //   })
-    
-    let paper = {id: 1, name: "Research 1", author: "George", abstract: "This is a sample abstract for Research 1", url: "fake url 1"};
-    this.props.addPaper(paper);
+    axios.get(`/papers?id=${this.props.userID}`)
+      .then(res => {
+        console.log(res)
+        this.props.addPaper(res);
+      })
   }
 
   clickTwo = () => {
@@ -71,23 +69,23 @@ class ChooseTwo extends Component {
 
     this.props.addLikedPaper(likedPaper);
     
-    // axios.post("url", {
-    //   userId: this.props.userID,
-    //   reportId: id,
-    //   score: 2
-    // }).then(res => {
-    //   console.log(res);
-    // }).catch(err => {
-    //   console.log(err);
-    // })
+    axios.post("url", {
+      userId: this.props.userID,
+      reportId: id,
+      score: 2
+    }).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
 
     this.props.removePaper();
 
-    // axios.get("url")
-    //   .then(res => {
-    //     let newPaper = res.JSON();
-    //     this.props.addPaper(newPaper);
-    //   })
+    axios.get(`/papers?id=${this.props.userID}`)
+      .then(res => {
+        console.log(res)
+        this.props.addPaper(res)
+      })
   }
 
   clickThree = () => {
@@ -96,23 +94,23 @@ class ChooseTwo extends Component {
 
     this.props.addLikedPaper(superLikedPaper);
     
-    // axios.post("url", {
-    //   userId: this.props.userID,
-    //   reportId: id,
-    //   score: 3
-    // }).then(res => {
-    //   console.log(res);
-    // }).catch(err => {
-    //   console.log(err);
-    // })
+    axios.post("url", {
+      userId: this.props.userID,
+      reportId: id,
+      score: 3
+    }).then(res => {
+      console.log(res);
+    }).catch(err => {
+      console.log(err);
+    })
 
     this.props.removePaper();
 
-    // axios.get("url")
-    //   .then(res => {
-    //     let newPaper = res.JSON();
-    //     this.props.addPaper(newPaper);
-    //   })
+    axios.get(`/papers?id=${this.props.userID}`)
+      .then(res => {
+        console.log(res)
+        this.props.addPaper(res);
+      })
   }
 
   componentDidUpdate = () => {
