@@ -1,5 +1,6 @@
 const initState = {
-  papers: []
+  papers: [],
+  userID: undefined
 };
 
 const rootReducer = (state = initState, action) => {
@@ -8,6 +9,12 @@ const rootReducer = (state = initState, action) => {
     return {
       ...state,
       papers: action.papers
+    }
+  }
+  else if (action.type === "SET_USER_ID") {
+    return {
+      ...state,
+      id: action.id
     }
   }
   else if (action.type === "REMOVE_PAPER") {

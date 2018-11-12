@@ -4,7 +4,7 @@
 
 .button-container {
   text-align: center;
-  margin-top: 150%;
+  margin-top: 5%;
 }
 
 .choose-button {
@@ -20,4 +20,20 @@
 .cards-container {
   padding-top: 5%;
   text-align: center;
+}
+
+#one {
+  float: right;
+}
+
+#three {
+  float: left;
+}
+
+.choose-rating {
+  color: white;
+  font-family: VisbyRoundCF;
+  font-size: 150%;
+  text-align: center;
+  margin-top: 30%;
 }
