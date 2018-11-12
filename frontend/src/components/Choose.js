@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import './Choose.css';
+import Heading from './Heading';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { setPapers } from '../actions/setPapers';
 
-export default class Choose extends Component {
+class Choose extends Component {
+
+  state = {
+    fileName: undefined
+  }
 
   handleURLSubmit = async e => {
     e.preventDefault();
@@ -17,19 +24,23 @@ export default class Choose extends Component {
     }).catch(err => {
       console.log(err);
     })
-
   }
 
   handleFileSubmit = async e => {
     e.preventDefault();
 
+    let formData = new FormData();
     let pdfFile = e.target.elements.pdfFile.files[0];
-    console.log(pdfFile);
+    let fileName = pdfFile.name;
 
-    axios.post("/papers/upload", {
-      file: pdfFile
-    }).then(res => {
-      console.log(res);
+    this.setState({ fileName });
+
+    formData.append("file", pdfFile);
+    console.log(formData);
+
+    axios.post("/papers/upload", formData)
+    .then(res => {
+      console.log(res)
     }).catch(err => {
       console.log(err);
     })
@@ -38,6 +49,7 @@ export default class Choose extends Component {
   render() {
     return (
       <div className="choose-container">
+        <Heading/>
         <div className="container-fluid">
           <div class="subtitle-container">
             <div className="row justify-content-center">
@@ -66,7 +78,9 @@ export default class Choose extends Component {
                     <div className="upload-container">
                       <p className="option-caption">Upload a PDF.</p>
                       <div class="upload-button-container">
+                        <label htmlFor="upload-button">Upload</label>
                         <input type="file" id="upload-button" name="pdfFile"/>
+
                       </div>
                       <div className="pdf-url-submit-container">
                         <button type="submit" className="btn btn-primary">Submit</button>
@@ -81,3 +95,17 @@ export default class Choose extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    papers: state.papers
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setPapers: papers => { dispatch(setPapers(papers)) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Choose);

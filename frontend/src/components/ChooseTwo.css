@@ -1,0 +1,23 @@
+#paper-name {
+  text-align: center;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 150%;
+}
+
+.choose-button {
+  padding: 6% 5%;
+  border-radius: 100px;
+  width: 25%;
+}
+
+.button-group-container {
+  margin-top: 50%;
+}
+
+.cards-container {
+  padding-top: 5%;
+  text-align: center;
+}

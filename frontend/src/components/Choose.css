@@ -3,7 +3,7 @@
 }
 
 .subtitle {
-  margin-top: 10%;
+  margin-top: 5%;
   color: white;
   font-family: VisbyRoundCF;
   font-weight: bolder;
@@ -42,8 +42,19 @@
 
 #upload-button {
   font-family: VisbyRoundCF;
-  background-color: white;
-  border-radius: 15px;
-  border: none;
-  color: #F3977C;
+  color: white;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.upload-container {
+  text-align: center;
+}
+.upload-button-container {
+  text-align: center;
+}
+
+label {
+  cursor: pointer;
 }

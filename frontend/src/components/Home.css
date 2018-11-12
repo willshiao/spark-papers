@@ -12,7 +12,7 @@
 }
 
 #get-started {
-  margin-top: 10%;
+  margin-top: 8%;
 }
 
 .btn-primary {
@@ -29,4 +29,12 @@
   border-radius: 15px;
   border: none;
   color: #ba745e;
+}
+
+.catch-phrase {
+  font-family: VisbyRoundCF;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-top: 2%;
 }

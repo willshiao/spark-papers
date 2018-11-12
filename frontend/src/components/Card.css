@@ -1,0 +1,20 @@
+.paper-card {
+  background-color: white;
+  border-radius: 15px;
+  height: 80vh;
+  margin-top: 10%;
+}
+
+.paper-title {
+  font-family: VisbyRoundCF;
+  color: #ba745e;
+  text-align: center;
+  padding-top: 5%;
+}
+
+.paper-info {
+  font-family: VisbyRoundCF;
+  color: #ba745e;
+  font-weight: bold;
+  margin-left: 5%;
+}

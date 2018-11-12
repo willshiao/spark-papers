@@ -17,9 +17,14 @@ export default class Home extends Component {
             </div>
           </div>
           <div className="row justify-content-center">
+            <div className="col-md-6">
+              <p className="catch-phrase">Let us do the work for you.</p>
+            </div>
+          </div>
+          <div className="row justify-content-center">
             <div className="col-md-12">
               <div className="button-container">
-                <NavLink to="/choose">
+                <NavLink to="/choose-two">
                   <button type="button" id="get-started" className="btn btn-primary">Get Started</button>
                 </NavLink>
               </div>

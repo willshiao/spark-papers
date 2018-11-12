@@ -1,0 +1,17 @@
+.summary-caption {
+  color: white;
+  font-family: VisbyRoundCF;
+  font-size: 125%;
+  padding-top: 10%;
+}
+
+.summary-box {
+  background-color: white;
+  border-radius: 15px;
+  color: #DE6262;
+}
+
+.summary {
+  font-family: VisbyRoundCF;
+  padding: 4%;
+}
