@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request
-from magic import svd, sync_data
+from magic import svd, sync_data, depickle_matrix, pickle_matrix, recommend, matrix
 app = Flask(__name__)
 
 
@@ -13,8 +13,8 @@ def hello():
 def update():
     if request.method == "POST":
         rating = request.form["rating"]
-        uid = request.cookies.get("uid")
-        svd()
+        uid = 1#request.cookies.get("uid")
+        recommend(svd(), uid, None, matrix)
     else:
         abort(401)
     return rating

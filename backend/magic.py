@@ -1,13 +1,11 @@
 import numpy as np
 import pymongo
 import configparser as cfg
-import signal
-import sys
 from scipy.sparse.linalg import svds, eigs
 from scipy import stats
 from scipy.sparse import random
 from pymongo import MongoClient
-import pickle
+import pickle, os, signal, sys, copy
 
 
 def pickle_matrix(matrix, filename):
@@ -23,6 +21,13 @@ def depickle_matrix(filename):
     return pickle.load(fileObj)
 
 
+if os.path.isfile('pickle'):
+    matrix = depickle_matrix('pickle')
+else:
+    print('create matrix')
+    matrix = np.random.rand(100, 1000)
+
+
 def connect():
     config = cfg.ConfigParser()
     config.read('config.cnf')
@@ -30,9 +35,9 @@ def connect():
     return MongoClient(config['mongo']['uri'])
 
 
-def svd():
-    # calculate svd and stuff
+def recommend(predictions, uid, paper_df, original_ratings):
     client = connect()
+    u, sigma, vt = svds(matrix)
 
 
 def sync_data():
@@ -41,6 +46,6 @@ def sync_data():
 
 
 def signal_handler(sig, frame):
-    print('pickle here')
+    pickle_matrix(matrix, 'pickle')
     sys.exit(0)
 signal.signal(signal.SIGINT, signal_handler)
