@@ -59,3 +59,19 @@ typings/
 
 # next.js build output
 .next
+
+# ignore uploads
+uploads/*
+
+# ignore other config and assorted files
+!config/default.js
+config/*
+.DS_Store
+__pycache__
+/.vscode/
+config.cnf
+s2-corpus-13
+s2-corpus-13.gz
+picklejar
+*.pdf
+config.cnf
