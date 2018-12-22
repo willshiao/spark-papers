@@ -1,0 +1,40 @@
+.logo-container {
+  text-align: center;
+}
+
+#sparkpapers-logo {
+  width: 40%;
+  margin-top: 15%;
+}
+
+.button-container {
+  text-align: center;
+}
+
+#get-started {
+  margin-top: 8%;
+}
+
+.btn-primary {
+  font-family: VisbyRoundCF;
+  background-color: white;
+  border-radius: 15px;
+  border: none;
+  color: #F3977C;
+}
+
+.btn-primary:hover {
+  font-family: VisbyRoundCF;
+  background-color: #e4e4e4;
+  border-radius: 15px;
+  border: none;
+  color: #ba745e;
+}
+
+.catch-phrase {
+  font-family: VisbyRoundCF;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-top: 2%;
+}

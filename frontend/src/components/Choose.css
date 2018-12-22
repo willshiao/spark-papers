@@ -1,0 +1,60 @@
+.subtitle-container {
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: 5%;
+  color: white;
+  font-family: VisbyRoundCF;
+  font-weight: bolder;
+  font-size: 175%;
+}
+
+.url-input {
+  font-family: VisbyRoundCF;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.submit-pdf-button-container {
+  text-align: center;
+}
+
+/* .pdf-url-container {
+  margin-top: 10%;
+} */
+
+.pdf-url-submit-container {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.option-caption {
+  color: white;
+  font-family: VisbyRoundCF;
+  font-weight: normal;
+  margin-top: 25%;
+}
+
+.form-container {
+  text-align: center;
+}
+
+#upload-button {
+  font-family: VisbyRoundCF;
+  color: white;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.upload-container {
+  text-align: center;
+}
+.upload-button-container {
+  text-align: center;
+}
+
+label {
+  cursor: pointer;
+}

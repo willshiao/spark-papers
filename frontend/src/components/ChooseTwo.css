@@ -1,0 +1,49 @@
+#paper-name {
+  text-align: center;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.choose-button {
+  padding: 6% 5%;
+  border-radius: 100px;
+  width: 25%;
+}
+
+.button-group-container {
+  margin-top: 50%;
+}
+
+.cards-container {
+  padding-top: 5%;
+  text-align: center;
+}
+
+#one {
+  float: right;
+}
+
+#three {
+  float: left;
+}
+
+.choose-rating {
+  color: white;
+  font-family: VisbyRoundCF;
+  font-size: 150%;
+  text-align: center;
+  margin-top: 30%;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.results-button-container {
+  text-align: center;
+  margin-top: 20%;
+}
